@@ -2,20 +2,22 @@
   "name": "envsample",
   "version": "1.0.0",
   "description": "Create a .env.sample file using .env, .env.local and .env.test",
-  "homepage": "https://github.com/fuuta0201/envsample#readme",
-  "bugs": {
-    "url": "https://github.com/fuuta0201/envsample/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fuuta0201/envsample.git"
-  },
   "license": "MIT",
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "private": true,
+  "type": "module",
+  "bin": {
+    "envsample": "./dist/index.js"
   },
-  "dependencies": {
-    "tsx": "^4.22.4"
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "postbuild": "chmod +x dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
   }
 }
