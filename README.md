@@ -2,6 +2,12 @@
 
 .envから.env.sampleを生成するスクリプト
 
+## Development
+
+```
+npm run dev -- .env
+```
+
 ## Build
 
 ./distにビルド後のファイルが生成されます
