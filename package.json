@@ -1,0 +1,18 @@
+{
+  "name": "envsample",
+  "version": "1.0.0",
+  "description": "Create a .env.sample file using .env, .env.local and .env.test",
+  "homepage": "https://github.com/fuuta0201/envsample#readme",
+  "bugs": {
+    "url": "https://github.com/fuuta0201/envsample/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuuta0201/envsample.git"
+  },
+  "license": "MIT",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
