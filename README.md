@@ -28,7 +28,7 @@ npm link
 第二引数にはenvファイルパスを指定します
 
 ```
-envsample hoge.env
+envsample .env
 ```
 
 ## Unlink
