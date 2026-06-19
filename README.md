@@ -31,7 +31,7 @@ npm link
 envsample hoge.env
 ```
 
-## Un link
+## Unlink
 
 グローバルリンクを解除します
 
