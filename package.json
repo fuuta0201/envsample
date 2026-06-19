@@ -2,8 +2,7 @@
   "name": "envsample",
   "version": "1.0.0",
   "description": "Create a .env.sample file using .env, .env.local and .env.test",
-  "license": "MIT",
-  "private": true,
+  "license": "UNLICENSED",
   "type": "module",
   "bin": {
     "envsample": "./dist/index.js"
