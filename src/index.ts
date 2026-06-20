@@ -93,6 +93,7 @@ const main = () => {
 
     fs.appendFileSync(outPath, outTexts, "utf-8");
 
+    // TODO : jsファイル実行の場合コンソールに表示されない
     console.log(`Success: .env.sample created (${outPath}).`);
     process.exit(0);
   } catch (error) {
