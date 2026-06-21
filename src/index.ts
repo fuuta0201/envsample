@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import * as fs from "fs";
 import path from "node:path";
-import { allowedFiles } from "@/constants/env.js";
-import { filterDuplicateEnv } from "@/utils/filter-duplicate-env.js";
+import { allowedFiles } from "./constants/env.js";
+import { filterDuplicateEnv } from "./utils/filter-duplicate-env.js";
 
 const main = () => {
   const args = process.argv.slice(2);
