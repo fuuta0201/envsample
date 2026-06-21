@@ -38,3 +38,29 @@ envsample .env
 ```
 npm unlink -g envsample
 ```
+
+## Usage
+
+.envファイルを作成します
+
+```
+EXAMPLE_ENV=example-env
+AUTH_SECRET=ejXwfsdf-fsdf304Scs
+API_KEY=api-key-for-envsample
+CLIENT_ID=client-id-for-envsample
+```
+
+envsampleを実行します。第二引数は.envへパスを入力します。
+
+```
+envsample .env
+```
+
+.env.sampleが作成されます
+
+```
+EXAMPLE_ENV=
+AUTH_SECRET=
+API_KEY=
+CLIENT_ID=
+```
