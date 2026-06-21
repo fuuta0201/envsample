@@ -43,7 +43,7 @@ const main = () => {
   let rows: string[];
   try {
     rows = fs.readFileSync(filePath, "utf-8").split("\n");
-  } catch (error) {
+  } catch {
     console.error(`Error: failed to read file: ${filePath}`);
     process.exit(1);
   }
