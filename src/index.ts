@@ -1,14 +1,8 @@
 #!/usr/bin/env node
 import * as fs from "fs";
 import path from "node:path";
-
-const allowedFiles = new Set([
-  ".env",
-  ".env.local",
-  ".env.test",
-  ".env.prd",
-  ".env.stg",
-]);
+import { allowedFiles } from "@/constants/env.js";
+import { filterDuplicateEnv } from "@/utils/filter-duplicate-env.js";
 
 const main = () => {
   const args = process.argv.slice(2);
@@ -77,13 +71,13 @@ const main = () => {
   // ファイル書き込み
   const outDir = path.dirname(filePath);
   const outPath = path.join(outDir, ".env.sample");
-  const outTexts = envLabels.map((label) => `${label}=`).join("\n") + "\n";
 
   try {
     // 既存ファイルの存在確認
-    // TODO : 差分を確認して不足分だけ追記
+    let filteredEnvs: string[] = envLabels;
     if (fs.existsSync(outPath) && fs.statSync(outPath).size > 0) {
       const currentText = fs.readFileSync(outPath, "utf-8");
+      filteredEnvs = filterDuplicateEnv(currentText, envLabels);
 
       // 既存ファイルの改行確認
       if (!currentText.endsWith("\n")) {
@@ -91,6 +85,7 @@ const main = () => {
       }
     }
 
+    const outTexts = filteredEnvs.map((label) => `${label}=`).join("\n") + "\n";
     fs.appendFileSync(outPath, outTexts, "utf-8");
 
     // TODO : jsファイル実行の場合コンソールに表示されない
